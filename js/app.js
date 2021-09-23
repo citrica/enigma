@@ -6,28 +6,18 @@ var text = "b': yqg ,:agr(hue:) shrerg jq,u'qf q !hg ,:psqñrf:g rg,fuwurae: s:f
 var text2 = "Hola mundo";
 
 var searchIndex = (letter, alphabet) => {
-    for (var i = 0; i < alphabet.length; i++) {
-        if (alphabet[i] === letter) {
-            return i;
-        }
-    }
-    return -1;
+    return alphabet.indexOf(letter);
 }
 
 var transformLetter = (letter, origin, destination) => {
     var letterIndex = searchIndex(letter, origin);
-
-    if (letterIndex === -1) {
-        return letter;
-    } else {
-        return destination[letterIndex];
-    }
+    var result = letterIndex === -1 ? letter : destination[letterIndex];
+    return result;
 }
 
 var transformText = (text, origin, destination) => {
     var textLowerCase = text.toLowerCase();
     var newText = "";
-
     for (var i = 0; i < textLowerCase.length; i++) {
         newText = newText + transformLetter(textLowerCase[i], origin, destination);
     }
