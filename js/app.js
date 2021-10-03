@@ -30,3 +30,18 @@ console.log("Texto introducido: " + text);
 console.log("Texto desencriptado: " + transformText(text, encryptedAlphabet1, plainAlphabet1));
 
 // Ejecicio generador aleatorio
+
+var randomPick = (n, min, max) => {
+    var range = max - min + 1;
+    var result = [];
+    for (var i = 0; i < n; i++) {
+        result[i] = Math.floor(Math.random() * range) + min;
+        //No deben repetirse los numeros escogidos aleatoriamente
+    }
+    return result;
+}
+
+console.log(randomPick(10, 1, 100));
+// randomPick(6, 1, 49); // Apuesta automática de la primitiva
+// randomPick(15, 1, 15); // Escoge combinación de bolas de billar
+// randomPick(1, 1, 6); // Tirada aleatoria de un dado
