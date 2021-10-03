@@ -1,0 +1,35 @@
+body {
+    text-align: center;
+}
+
+.container {
+    margin: auto;
+    width: 50%;
+}
+
+textarea {
+    width: 100%;
+    border: 1px solid #ccc;
+    resize: vertical;
+    margin: 32px 0 32px 0;
+    padding: 12px 20px;
+    display: block;
+    word-break: break-all;
+    box-sizing: border-box;
+    min-height: 220px;
+    background: #eee;
+    text-align: left;
+}
+
+button {
+    background-color: #4ad395;
+    font-size: 14px;
+    padding: 10px;
+    margin: 5px;
+    align-items: center;
+    cursor: pointer;
+}
+
+#clear {
+    background-color: rgb(218, 96, 49);
+}

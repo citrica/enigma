@@ -1,12 +1,4 @@
-// Ejercicio encriptar
-
-var plainAlphabet1 = "aom";
-var encryptedAlphabet1 = "sz*";
-var plainAlphabet2 = "abcdefghijklmnopqrstuvwxyz:()!¡,'";
-var encryptedAlphabet2 = "qw,ert(yuio'pa:sdfg!hjklz¡xcv)bnm";
-var text1 = "hola amigo";
-var text2 = "b': yqg ,:agr(hue:) shrerg jq,u'qf q !hg ,:psqñrf:g rg,fuwurae: s:f r' ,yq!x mbg:z 'q 'r,yrn !hfua( t'usqfuq ,:apu(:)m z q ,:a!uahq,u:a rajuq ha pragqir ,utfqe:n br' dhr !h dhurfqg)";
-
+// Ejercicio Enigma: enciptar y desencriptar
 
 var searchIndex = (letter, alphabet) => {
     return alphabet.indexOf(letter);
@@ -24,13 +16,17 @@ var transformText = (text, origin, destination) => {
     for (var i = 0; i < textLowerCase.length; i++) {
         newText = newText + transformLetter(textLowerCase[i], origin, destination);
     }
-    return newText;
+    return document.getElementById('result').value = newText;
 }
 
-// console.log("Texto introducido: " + text1);
-// console.log("Texto encriptado: " + transformText(text1, plainAlphabet1, encryptedAlphabet1));
-// console.log("Texto introducido: " + text2);
-// console.log("Texto desencriptado: " + transformText(text2, encryptedAlphabet2, plainAlphabet2));
+var clearText = () => {
+    document.getElementById('text').value = "";
+    document.getElementById('result').value = "";
+}
+
+document.getElementById("encrypt").addEventListener("click", () => transformText(document.getElementById('text').value, plainAlphabet2, encryptedAlphabet2));
+document.getElementById("decrypt").addEventListener("click", () => transformText(document.getElementById('text').value, encryptedAlphabet2, plainAlphabet2));
+document.getElementById("clear").addEventListener("click", () => clearText());
 
 // Ejecicio generador aleatorio
 
